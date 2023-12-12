@@ -36,7 +36,7 @@ class SearchPage extends StatelessWidget {
               print("Searching...");
             },
             child: Container(
-              padding: EdgeInsets.only(left: 8),
+              padding: const EdgeInsets.only(left: 8),
               child: const Icon(
                 Icons.search,
                 color: Colors.red,

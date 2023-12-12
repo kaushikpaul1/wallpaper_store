@@ -19,31 +19,49 @@ class HomeScreen extends StatelessWidget {
           word2: " Store",
         ),
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: SearchPage(),
-          ),
-          // SizedBox(
-          //   height: 100,
-          //   width: MediaQuery.of(context).size.width,
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-          ),
-          Container(
-            margin: EdgeInsets.symmetric(vertical: 20),
-            child: SizedBox(
-              height: 50,
-              width: MediaQuery.of(context).size.width,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 30,
-                itemBuilder: ((context, index) => CatBlock()),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: SearchPage(),
+            ),
+            // SizedBox(
+            //   height: 100,
+            //   width: MediaQuery.of(context).size.width,
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+            ),
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 15),
+              child: SizedBox(
+                height: 50,
+                width: MediaQuery.of(context).size.width,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 30,
+                  itemBuilder: ((context, index) => const CatBlock()),
+                ),
               ),
             ),
-          )
-        ],
+            SizedBox(
+              height: MediaQuery.of(context).size.height,
+              child: GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    mainAxisExtent: 400,
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 13,
+                    mainAxisSpacing: 10,
+                  ),
+                  itemCount: 16,
+                  itemBuilder: ((context, index) => Container(
+                        height: 500,
+                        width: 50,
+                        color: Colors.amberAccent,
+                      ))),
+            )
+          ],
+        ),
       ),
     );
   }
