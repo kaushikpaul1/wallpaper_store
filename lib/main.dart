@@ -1,4 +1,7 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
+import 'package:wallpaper/views/screens/category.dart';
 import 'package:wallpaper/views/screens/home.dart';
 // import 'package:wallpaper/views/widgets/SearchBar.dart';
 
@@ -18,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      home:  const HomeScreen(),
     );
   }
 }

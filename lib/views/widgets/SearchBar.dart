@@ -1,4 +1,6 @@
 // ignore: file_names
+// ignore_for_file: file_names, duplicate_ignore
+
 import 'package:flutter/material.dart';
 
 class SearchPage extends StatelessWidget {
@@ -33,6 +35,7 @@ class SearchPage extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
+              // ignore: avoid_print
               print("Searching...");
             },
             child: Container(

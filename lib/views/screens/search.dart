@@ -1,10 +1,12 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:wallpaper/views/widgets/CustomAppBar.dart';
 import 'package:wallpaper/views/widgets/SearchBar.dart';
 import 'package:wallpaper/views/widgets/CatBlock.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class Searchscreen extends StatelessWidget {
+  const Searchscreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,21 +31,7 @@ class HomeScreen extends StatelessWidget {
             // SizedBox(
             //   height: 100,
             //   width: MediaQuery.of(context).size.width,
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-            ),
-            Container(
-              margin: const EdgeInsets.symmetric(vertical: 15),
-              child: SizedBox(
-                height: 50,
-                width: MediaQuery.of(context).size.width,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 30,
-                  itemBuilder: ((context, index) => const CatBlock()),
-                ),
-              ),
-            ),
+
             // ignore: sized_box_for_whitespace
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 8),

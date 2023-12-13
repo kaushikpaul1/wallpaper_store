@@ -1,10 +1,12 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:wallpaper/views/widgets/CustomAppBar.dart';
 import 'package:wallpaper/views/widgets/SearchBar.dart';
 import 'package:wallpaper/views/widgets/CatBlock.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class CategoryScreen extends StatelessWidget {
+  const CategoryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,27 +24,45 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: SearchPage(),
-            ),
-            // SizedBox(
-            //   height: 100,
-            //   width: MediaQuery.of(context).size.width,
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-            ),
-            Container(
-              margin: const EdgeInsets.symmetric(vertical: 15),
-              child: SizedBox(
-                height: 50,
-                width: MediaQuery.of(context).size.width,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 30,
-                  itemBuilder: ((context, index) => const CatBlock()),
-                ),
+            Padding(
+              padding: const EdgeInsets.only(top: 12),
+              child: Stack(
+                children: [
+                  Image.network(
+                      height: 150,
+                      width: MediaQuery.of(context).size.width,
+                      "https://media.istockphoto.com/id/1409236261/photo/healthy-food-healthy-eating-background-fruit-vegetable-berry-vegetarian-eating-superfood.jpg?s=2048x2048&w=is&k=20&c=AOJUGUDXqr7aYJhvW4-6sf1vzaUmBO1q3bRE5HBcEVs="),
+                  Container(
+                    height: 150,
+                    width: MediaQuery.of(context).size.width,
+                    color: Colors.black38,
+                  ),
+                  const Positioned(
+                    left: 160,
+                    child: Column(
+                      children: [
+                        Text(
+                          "Category",
+                          style: TextStyle(
+                              fontSize: 15,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w400),
+                        ),
+                        Text(
+                          "Fruits",
+                          style: TextStyle(
+                              fontSize: 30,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w700),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
               ),
+            ),
+            const SizedBox(
+              height: 20,
             ),
             // ignore: sized_box_for_whitespace
             Container(
