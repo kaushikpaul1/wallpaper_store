@@ -1,11 +1,13 @@
 // ignore: file_names
-// ignore_for_file: file_names, duplicate_ignore
+// ignore_for_file: file_names, duplicate_ignore, prefer_final_fields
 
 import 'package:flutter/material.dart';
+import 'package:wallpaper/views/screens/search.dart';
 
+// ignore: must_be_immutable
 class SearchPage extends StatelessWidget {
-  const SearchPage({super.key});
-
+    SearchPage({super.key});
+  TextEditingController _searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,9 +18,10 @@ class SearchPage extends StatelessWidget {
           borderRadius: BorderRadius.circular(25)),
       child: Row(
         children: [
-          const Expanded(
+          Expanded(
             child: TextField(
-              decoration: InputDecoration(
+              controller: _searchController,
+              decoration: const InputDecoration(
                 hintText: "Search Wallpapers",
                 hintStyle: TextStyle(
                   fontSize: 18.5,
@@ -36,7 +39,11 @@ class SearchPage extends StatelessWidget {
           InkWell(
             onTap: () {
               // ignore: avoid_print
-              print("Searching...");
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          Searchscreen(query: _searchController.text)));
             },
             child: Container(
               padding: const EdgeInsets.only(left: 8),

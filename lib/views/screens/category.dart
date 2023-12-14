@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:wallpaper/views/widgets/CustomAppBar.dart';
-import 'package:wallpaper/views/widgets/SearchBar.dart';
+import 'package:wallpaper/views/widgets/SearchBarpage.dart';
 import 'package:wallpaper/views/widgets/CatBlock.dart';
 
 class CategoryScreen extends StatelessWidget {
@@ -39,6 +39,7 @@ class CategoryScreen extends StatelessWidget {
                   ),
                   const Positioned(
                     left: 160,
+                    top: 28,
                     child: Column(
                       children: [
                         Text(
@@ -51,7 +52,7 @@ class CategoryScreen extends StatelessWidget {
                         Text(
                           "Fruits",
                           style: TextStyle(
-                              fontSize: 30,
+                              fontSize: 35,
                               color: Colors.white,
                               fontWeight: FontWeight.w700),
                         ),

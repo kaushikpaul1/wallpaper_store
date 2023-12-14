@@ -1,12 +1,35 @@
-// ignore_for_file: unused_import
+// ignore_for_file: unused_import, must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:wallpaper/controller/apiOper.dart';
+import 'package:wallpaper/model/photosModel.dart';
 import 'package:wallpaper/views/widgets/CustomAppBar.dart';
-import 'package:wallpaper/views/widgets/SearchBar.dart';
+import 'package:wallpaper/views/widgets/SearchBarpage.dart';
 import 'package:wallpaper/views/widgets/CatBlock.dart';
 
-class Searchscreen extends StatelessWidget {
-  const Searchscreen({super.key});
+class Searchscreen extends StatefulWidget {
+  String query;
+  Searchscreen({super.key, required this.query});
+
+  @override
+  State<Searchscreen> createState() => _SearchscreenState();
+}
+
+class _SearchscreenState extends State<Searchscreen> {
+  late List<PhotosModel> searchResults;
+
+  // ignore: non_constant_identifier_names
+  GetSearchResult() async {
+    searchResults = await ApiOperations.searchWallpapers(widget.query);
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    
+    super.initState();
+    GetSearchResult();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +49,7 @@ class Searchscreen extends StatelessWidget {
           children: [
             const Padding(
               padding: EdgeInsets.all(8.0),
-              child: SearchPage(),
+              child: SearchBarpage(),
             ),
             // SizedBox(
             //   height: 100,
@@ -45,7 +68,7 @@ class Searchscreen extends StatelessWidget {
                     crossAxisSpacing: 13,
                     mainAxisSpacing: 10,
                   ),
-                  itemCount: 16,
+                  itemCount: searchResults.length,
                   itemBuilder: ((context, index) => Container(
                         height: 500,
                         width: 50,
@@ -60,7 +83,7 @@ class Searchscreen extends StatelessWidget {
                               // width: 50,
 
                               fit: BoxFit.cover,
-                              "https://w.forfun.com/fetch/3c/3cc1798fbce547db71fcc05fe49a2ac4.jpeg?h=900&r=0.5"),
+                           searchResults[index].imgSrc),
                         ),
                       ))),
             ),
