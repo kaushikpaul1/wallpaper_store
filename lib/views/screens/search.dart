@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:wallpaper/controller/apiOper.dart';
 import 'package:wallpaper/model/photosModel.dart';
 import 'package:wallpaper/views/widgets/CustomAppBar.dart';
-import 'package:wallpaper/views/widgets/SearchBarpage.dart';
+import 'package:wallpaper/views/widgets/SearchBar.dart';
 import 'package:wallpaper/views/widgets/CatBlock.dart';
 
 class Searchscreen extends StatefulWidget {
@@ -26,7 +26,6 @@ class _SearchscreenState extends State<Searchscreen> {
 
   @override
   void initState() {
-    
     super.initState();
     GetSearchResult();
   }
@@ -47,9 +46,9 @@ class _SearchscreenState extends State<Searchscreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const Padding(
+            Padding(
               padding: EdgeInsets.all(8.0),
-              child: SearchBarpage(),
+              child: SearchPage(),
             ),
             // SizedBox(
             //   height: 100,
@@ -83,7 +82,7 @@ class _SearchscreenState extends State<Searchscreen> {
                               // width: 50,
 
                               fit: BoxFit.cover,
-                           searchResults[index].imgSrc),
+                              searchResults[index].imgSrc),
                         ),
                       ))),
             ),

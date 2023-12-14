@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:wallpaper/controller/apiOper.dart';
 import 'package:wallpaper/model/photosModel.dart';
 import 'package:wallpaper/views/widgets/CustomAppBar.dart';
-import 'package:wallpaper/views/widgets/SearchBarpage.dart';
+import 'package:wallpaper/views/widgets/SearchBar.dart';
 import 'package:wallpaper/views/widgets/CatBlock.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -44,10 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: SearchBarPage(),
-            ),
+           Padding(padding: EdgeInsets.all(8.0), child: SearchPage()),
             // SizedBox(
             //   height: 100,
             //   width: MediaQuery.of(context).size.width,

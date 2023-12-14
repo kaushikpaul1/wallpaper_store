@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:wallpaper/views/widgets/CustomAppBar.dart';
-import 'package:wallpaper/views/widgets/SearchBarpage.dart';
+import 'package:wallpaper/views/widgets/SearchBar.dart';
 import 'package:wallpaper/views/widgets/CatBlock.dart';
 
 class CategoryScreen extends StatelessWidget {
